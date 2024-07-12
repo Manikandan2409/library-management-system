@@ -6,7 +6,6 @@ public class BookDTO{
     private String author;
     private String publisher;
     private int yearPublished;
-    private String isbn;
     private String category;
 
     public BookDTO(String title, String author, String publisher, int yearPublished, String category) {
@@ -14,13 +13,12 @@ public class BookDTO{
         this.author = author;
         this.publisher = publisher;
         this.yearPublished = yearPublished;
-        this.isbn = String.valueOf(title.hashCode());
         this.category = category;
     }
     @Override
     public String toString() {
         return "BookDTO [title=" + title + ", author=" + author + ", publisher=" + publisher + ", yearPublished="
-                + yearPublished + ", isbn=" + isbn + ", category=" + category + "]";
+                + yearPublished +", category=" + category + "]";
     }
     public String getTitle() {
         return title;
@@ -45,12 +43,6 @@ public class BookDTO{
     }
     public void setYearPublished(int yearPublished) {
         this.yearPublished = yearPublished;
-    }
-    public String getIsbn() {
-        return isbn;
-    }
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
     public String getCategory() {
         return category;

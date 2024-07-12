@@ -9,14 +9,13 @@ public class Book {
     private String author;
     private String publisher;
     private int yearPublished;
-    private String isbn;
     private String category;
     private int copiesAvailable;
 
     @Override
     public String toString() {
-        return bookId + "\t|" + title + "\t\t|" + author + "\t|" + publisher
-                + "\t|" + yearPublished + "\t|" + isbn + "\t|" + category
+        return bookId + "\t| " + title + "\t\t|" + author + "\t| " + publisher
+                + "\t| " + yearPublished + "\t| " + category
                 + "\t |" + copiesAvailable;
     }
 
@@ -29,14 +28,13 @@ public class Book {
         this.author = dto.getAuthor();
         this.publisher = dto.getPublisher();
         this.yearPublished = dto.getYearPublished();
-        this.isbn = dto.getIsbn();
         this.category = dto.getCategory();
         this.copiesAvailable = 20;
     }
 
     public static String getColumns() {
-        return " BookId |\ttitle\t\t\t|Author\t\t|Publisher\t|Year \t|isbn\t\t|category|Copies Available|"+
-        "\n=============================================================================================================================";
+        return " BookId |\t title\t\t\t| Author\t| Publisher\t\t| Year\t| category| Copies Available|"+
+        "\n==================================================================================================================";
     }
 
     public int getBookId() {
@@ -79,13 +77,7 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
+   
 
     public String getCategory() {
         return category;

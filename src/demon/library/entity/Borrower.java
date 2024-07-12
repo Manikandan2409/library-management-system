@@ -2,18 +2,23 @@ package demon.library.entity;
 
 public class Borrower {
     private int borrowerId;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
     private String phone;
     private String address;
 
     public Borrower(){}
-    
-    public Borrower(int borrowerId, String firstName, String lastName, String email, String phone, String address) {
-        this.borrowerId = borrowerId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+
+    public static String getColumns(){
+        return "| BookID| Name\t| Email\t\t\t| PhoneNumber\t | Address "+"\n====================================================================";
+    }
+    @Override
+    public String toString() {
+        return "| "+borrowerId+"\t| "+name+" \t| "+email+"\t| "+phone+" |\t"+address;
+    }
+    public Borrower(  String name, String email, String phone, String address) {
+       
+        this.name= name;
         this.email = email;
         this.phone = phone;
         this.address = address;
@@ -27,20 +32,12 @@ public class Borrower {
         this.borrowerId = borrowerId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

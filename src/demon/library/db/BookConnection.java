@@ -30,14 +30,13 @@ public class BookConnection {
         Book entity = new Book(dto);
 
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO books (Title, Author, Publisher, YearPublished, ISBN, Category, CopiesAvailable) VALUES (?,?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO books (Title, Author, Publisher, YearPublished,  Category, CopiesAvailable) VALUES (?,?,?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, entity.getTitle());
             ps.setString(2, entity.getAuthor());
             ps.setString(3, entity.getPublisher());
             ps.setInt(4, entity.getYearPublished());
-            ps.setString(5, entity.getIsbn());
-            ps.setString(6, entity.getCategory());
-            ps.setInt(7, entity.getCopiesAvailable());
+            ps.setString(5, entity.getCategory());
+            ps.setInt(6, entity.getCopiesAvailable());
 
             int status = ps.executeUpdate();
             if (status > 0) {
@@ -66,7 +65,6 @@ public class BookConnection {
                 book.setAuthor(rs.getString("author"));
                 book.setPublisher(rs.getString("publisher"));
                 book.setYearPublished(rs.getInt("yearPublished"));
-                book.setIsbn(rs.getString("isbn"));
                 book.setCategory(rs.getString("category"));
                 book.setCopiesAvailable(rs.getInt("copiesAvailable"));
                 books.add(book);
@@ -97,7 +95,7 @@ public class BookConnection {
                     .filter(book-> book.getYearPublished() == year)
                     .collect(Collectors.toList());
     }
-    
+    //delete
     public void deleteBookById(int id){
         String q="DELETE FROM books where BookID= ?";
         try (PreparedStatement ps = con.prepareStatement(q)) {
