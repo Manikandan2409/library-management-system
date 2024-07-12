@@ -46,5 +46,11 @@ public class Validation {
         }
         return choice;
     }
+    public String getNames(){
+        String name = in.nextLine();
+        if (isValidName(name)) {
+            return name;
+        }else return getNames();
+    }
     
 }

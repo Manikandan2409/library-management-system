@@ -15,12 +15,16 @@ public class BookAccess {
     // Create
     private void addBooks(){
 
-        
-        String title="Programming in Oracle";
-        String auth="Oracle Engineers";
-        String publisher ="Oracle system";
-        int yearPublished=1973;
-        String category="CS";
+        System.out.println("Title of the Book :");
+        String title=validate.getNames();
+        System.out.println(title+" \'s Author name :");
+        String auth=validate.getNames();
+        System.out.println(title+"\'s Publisher name");
+        String publisher =validate.getNames();
+        System.out.println(title+" published year :");
+        int yearPublished=validate.getNumber();
+        System.out.println(title+" Book Category :");
+        String category=validate.getNames();
         
         BookDTO dto = new BookDTO(title, auth, publisher, yearPublished, category);
 

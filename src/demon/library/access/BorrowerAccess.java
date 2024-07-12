@@ -52,7 +52,7 @@ public class BorrowerAccess {
         printBorrowers(borrowers);
     }
     //Delete Borrower
-    public void deleteBorrowerById(){
+    private void deleteBorrowerById(){
         viewBorrowers();
         System.out.println(" Borrower id: ");
         int id = validate.getNumber();
