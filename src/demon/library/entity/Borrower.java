@@ -8,6 +8,16 @@ public class Borrower {
     private String phone;
     private String address;
 
+    public Borrower(){}
+    
+    public Borrower(int borrowerId, String firstName, String lastName, String email, String phone, String address) {
+        this.borrowerId = borrowerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+    }
 
     public int getBorrowerId() {
         return borrowerId;

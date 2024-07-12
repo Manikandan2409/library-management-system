@@ -3,7 +3,7 @@ package demon.library.entity;
 import demon.library.dto.BookDTO;
 
 public class Book {
-    private static int bookcount=0;
+    private static int bookcount = 0;
     private int bookId;
     private String title;
     private String author;
@@ -15,30 +15,38 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book [bookId=" + bookId + ", title=" + title + ", author=" + author + ", publisher=" + publisher
-                + ", yearPublished=" + yearPublished + ", isbn=" + isbn + ", category=" + category
-                + ", copiesAvailable=" + copiesAvailable + "]";
+        return bookId + "\t|" + title + "\t\t|" + author + "\t|" + publisher
+                + "\t|" + yearPublished + "\t|" + isbn + "\t|" + category
+                + "\t |" + copiesAvailable;
     }
-    public Book(){}
 
-    public Book(BookDTO dto){
-        bookId= ++bookcount;
+    public Book() {
+    }
+
+    public Book(BookDTO dto) {
+        bookId = ++bookcount;
         this.title = dto.getTitle();
         this.author = dto.getAuthor();
-        this.publisher =dto.getPublisher();
+        this.publisher = dto.getPublisher();
         this.yearPublished = dto.getYearPublished();
         this.isbn = dto.getIsbn();
         this.category = dto.getCategory();
-        this.copiesAvailable= 20;
+        this.copiesAvailable = 20;
     }
-    
+
+    public static String getColumns() {
+        return " BookId |\ttitle\t\t\t|Author\t\t|Publisher\t|Year \t|isbn\t\t|category|Copies Available|"+
+        "\n=============================================================================================================================";
+    }
+
     public int getBookId() {
         return bookId;
     }
 
-    public void setBookId(int id){
+    public void setBookId(int id) {
         this.bookId = id;
     }
+
     public String getTitle() {
         return title;
     }
