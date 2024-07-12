@@ -9,9 +9,9 @@ import demon.library.utils.Validation;
 
 public class BorrowerAccess {
     
-    BorrowerConnection bc = new BorrowerConnection();
+    private final BorrowerConnection bc = new BorrowerConnection();
 
-    Validation validate = new Validation();
+    private final Validation validate = new Validation();
 
     public void accessBorrower(){
         while (true) {

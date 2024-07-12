@@ -14,6 +14,7 @@ import demon.library.entity.Borrower;
 public class BorrowerConnection {
 
     private Connection con= null;
+
     public BorrowerConnection(){
         try {
             con = DBConfig.getConnection();
@@ -22,7 +23,7 @@ public class BorrowerConnection {
            System.out.println("Conection failed: Borrower Connection");
         }
     }
-// create Borrower 
+    // create Borrower 
     public void save(Borrower borrower){
         String q = "INSERT INTO borrowers (Name,Email,Phone,Address) VALUES (?,?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(q,PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -72,8 +73,7 @@ public class BorrowerConnection {
                 System.out.println("-- "+status +" record deleted --");
             }
         } catch (Exception e) {
-            // TODO: handle exception
+           System.out.println("--- Failed :  Error while delete borrower ---"); 
         }
     }
-
 }

@@ -1,5 +1,6 @@
 package demon.library.entity;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class BorrowingHistory {
@@ -10,6 +11,25 @@ public class BorrowingHistory {
     private Date borrowedDate;
     private Date returnedDate;
     private Date dueDate;
+
+    @Override
+    public String toString() {
+        return 
+       "| "+ historyId+"\t| "+bookId +"\t| "+borrowerId +"\t\t| "+borrowedDate+"\t| "+returnedDate+"\t| "+dueDate;
+    }
+    public  static String getColumns(){
+        return "| "+ "Id"+"\t| "+"BookId"+"| "+"BorrowerID"+"\t| "+"BorrowedDate"+"\t| "+"ReturnedDate"+"\t| "+"DueDate"+"|";
+    }
+
+    public BorrowingHistory(){}
+    public BorrowingHistory( int bookId, int borrowerId) {
+        this.bookId = bookId;
+        this.borrowerId = borrowerId;
+        this.borrowedDate = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 20);
+        this.dueDate = cal.getTime();
+    }
 
     public int getHistoryId() {
         return historyId;

@@ -1,20 +1,16 @@
 package demon.library.access;
 
 import java.util.List;
-import java.util.Scanner;
 
 import demon.library.db.BookConnection;
 import demon.library.dto.BookDTO;
 import demon.library.entity.Book;
 import demon.library.utils.Validation;
 
-/**
- * BookAccess
- */
 public class BookAccess {
 
-    private BookConnection bc = new BookConnection();
-    Validation validate = new Validation();
+    private final BookConnection bc = new BookConnection();
+    private final Validation validate = new Validation();
     
     // Create
     private void addBooks(){
