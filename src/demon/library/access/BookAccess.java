@@ -39,14 +39,17 @@ public class BookAccess {
 
     // view an author
     private  void viewByAutor(){
-            String author="";
+        viewBooks();
+        System.out.println("Enter author name:");
+            String author=validate.getNames();
         List<Book> books = bc.findBooksByAuthor(author);
         printBooks(books);
     }
 
     //view by title
     private void viewByTitle(){
-        String title="";
+        viewBooks();
+        String title=validate.getNames();
         List<Book> books = bc.findBooksByTitle(title);
         printBooks(books);
     }

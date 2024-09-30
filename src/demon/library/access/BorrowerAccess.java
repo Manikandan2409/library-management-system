@@ -63,7 +63,7 @@ public class BorrowerAccess {
     // name
     private String getName(){
         System.out.println("Borrwer Name: ");
-        String name = validate.in.nextLine();  
+        String name = validate.in.nextLine();
         if (validate.isValidName(name))     return name;
         else  {
             System.out.println("Invalid Name");
